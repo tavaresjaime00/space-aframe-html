@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Asset management system -->
+      <a-assets>
+        <audio 
+          id="audio"
+          src="space.wav"></audio>
+        <img 
+          id="space"
+          src="space.jpg">
+        <img 
+          id="sun" 
+          src="sun.jpg">
+        <img 
+          id="mercury"
+          src="mercury.jpg">
+        <img 
+          id="venus"
+          src="venus.jpg">
+        <img
+          id="earth"
+          src="earth.jpg">
+        <img 
+          id="mars"
+          src="mars.jpg">
+        <img 
+          id="jupiter"
+          src="jupiter.jpg">
+        <img 
+          id="saturn"
+          src="saturn.png">
+        <img 
+          id="uranus"
+          src="uranus.jpg">
+        <img 
+          id="neptune"
+          src="neptune.jpg"> 
+      </a-assets>
+
+      <a-sky
+        src="#space"></a-sky>
+        <a-entity
+        text="value: Sun; color: #FFD500; align: center"
+        position="-12 8 -15"
+        scale="16 16 16"></a-entity>
+      <a-sphere 
+        src="#sun"
+        position="-12 2 -15" 
+        radius="3"
+        ></a-sphere>
+
+      <!-- Mercury -->
+      <a-entity
+      text="value: Mercury; color: white; align: center"
+      position="-7 5 -15"
+      scale="13 13 13"></a-entity>
+      <a-sphere
+        src="#mercury"
+        position="-7 2 -15"
+        radius=".25"></a-sphere>
+
+      <!-- Venus -->
+      <a-entity
+      text="value: Venus; color: orange; align: center"
+      position="-5 5 -15"
+      scale="13 13 13"></a-entity>
+      <a-sphere 
+        src="#venus"
+        position="-5 2 -15" 
+        radius=".5"></a-sphere>
+
+      <!-- Earth -->
+      <a-entity
+      text="value: Earth; color: green; align: center"
+      position="-3 5 -15"
+      scale="13 13 13"></a-entity>
+      <a-sphere 
+        src="#earth"
+        position="-3 2 -15" 
+        radius=".5"
+        animation="property: object3D.rotation.y;
+          to: 360;
+          dur: 10000;
+          loop: true">
+      </a-sphere>
+
+      <!-- Mars -->
+      <a-entity
+      text="value: Mars; color: red; align: center"
+      position="-1 5 -15"
+      scale="13 13 13"></a-entity>
+      <a-sphere 
+        src="#mars"
+        position="-1 2 -15" 
+        radius=".25"></a-sphere>
+
+      <!-- Jupiter -->
+      <a-entity
+      text="value: Jupiter; color: deeporange; align: center"
+      position="1 5 -15"
+      scale="13 13 13"></a-entity>
+      <a-sphere 
+        src="#jupiter"
+        position="1 2 -15"
+        radius="1"></a-sphere>
+      
+      <!-- Saturn -->
+      <a-entity
+      text="value: Saturn; color: yellow; align: center"
+      position="4 5 -15"
+      scale="13 13 13"></a-entity>
+      <a-sphere 
+        src="#saturn"
+        position="4 2 -15" 
+        radius=".8"></a-sphere>
+
+      <!-- Uranus -->
+      <a-entity
+      text="value: Uranus; color: lightgrey; align: center"
+      position="7 5 -15"
+      scale="13 13 13"></a-entity>
+      <a-sphere 
+        src="#uranus"
+        position="7 2 -15"
+        radius=".75"></a-sphere>
+
+      <!-- Neptune -->
+      <a-entity
+      text="value: Neptune; color: blue; align: center"
+      position="10 5 -15"
+      scale="13 13 13"></a-entity>
+      <a-sphere 
+        src="#neptune"
+        position="10 2 -15" 
+        radius=".75"></a-sphere>
+     
+      <!-- Saturn has rings around it that are made of torii (singular torus) -->
+      <a-entity 
+        position="4 2 -15">
+        <a-sphere 
+          position="0 0 0" 
+          radius=".8"
+          src="#saturn"></a-sphere>
+        <a-torus 
+          id="saturn-ring-1" 
+          color="#57524A" 
+          segments-tubular="50" 
+          radius="3.2" 
+          radius-tubular="0.1" 
+          rotation="110 0 0" 
+          scale=".44 .44 0.04"></a-torus>
+        <a-torus 
+          id="saturn-ring-2" 
+          color="#A29A87" 
+          segments-tubular="50" 
+          radius="2.4" 
+          radius-tubular="0.2" 
+          rotation="110 0 0" 
+          scale=".44 .44 0.04"></a-torus>
+      </a-entity>
+    
+      <a-light 
+        type="point" 
+        intensity="1.5" 
+        position="-8 2 -6"></a-light>
+        <a-sound src="#audio" autoplay="true"></a-sound>
+    </a-scene>
+  </body>
+</html>
